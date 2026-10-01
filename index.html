@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For AMIRDHAA 🤍 | A Special Memory Box</title>
+  <meta name="description" content="A special personal friendship memory website made with love for AMIRDHAA.JL.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Background Particles Canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Floating Ambient Music Control -->
+  <div class="audio-control-wrapper" id="audioControl">
+    <button class="music-btn" id="musicToggleBtn" aria-label="Toggle background music">
+      <i class="fa-solid fa-music"></i>
+      <span class="music-label">Our Song</span>
+      <span class="music-wave">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━ 🔐 SECRET ENTRY SCREEN ━━━━━━━━━━━━━━━━━━ -->
+  <section class="secret-screen" id="secretScreen">
+    <div class="secret-card glass-panel">
+      <div class="lock-icon-wrapper">
+        <div class="heart-pulse-icon">🤍</div>
+      </div>
+      <h1 class="secret-title font-handwritten">FOR AMIRDHAA 🤍</h1>
+      <p class="secret-subtitle">Some things are meant to be read only by the person who matters.</p>
+
+      <form id="secretForm" onsubmit="return false;" class="secret-form">
+        <div class="input-group">
+          <i class="fa-solid fa-key input-icon"></i>
+          <input 
+            type="password" 
+            id="secretCodeInput" 
+            placeholder="Enter our secret code..." 
+            autocomplete="off"
+            maxlength="10"
+            required
+          >
+        </div>
+
+        <button type="submit" id="unlockBtn" class="primary-btn glow-btn">
+          <span>OPEN OUR MEMORIES 🤍</span>
+        </button>
+      </form>
+
+      <div id="errorMessage" class="error-message hidden">
+        Oops... that's not our secret 🤭 Try again.
+      </div>
+      
+      <div class="secret-hint">
+        <i class="fa-solid fa-lock-open hint-icon"></i> A little privacy gate made just for you.
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━ 🌸 MAIN WEBSITE CONTENT (Hidden initially) ━━━━━━━━━━━━━━━━━━ -->
+  <main class="main-content hidden" id="mainContent">
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav glass-nav">
+      <div class="nav-brand font-handwritten">AMIRDHAA 🤍</div>
+      <div class="nav-actions">
+        <button id="navLockBtn" class="icon-nav-btn" title="Lock Website">
+          <i class="fa-solid fa-lock"></i> Lock Again
+        </button>
+      </div>
+    </nav>
+
+    <!-- 🌷 HERO SECTION -->
+    <section class="hero-section" id="heroSection">
+      <div class="container hero-container">
+        <div class="hero-text-wrapper animate-on-scroll">
+          <div class="badge-pill">Made with 🤍 for my best friend</div>
+          <h1 class="hero-title font-handwritten">Hey AMIRDHAA 🤍</h1>
+          <h2 class="hero-subtitle font-handwritten">To my bestesttttt friend...</h2>
+          <p class="hero-intro">
+            I built this little space on the internet just for you. A digital memory box filled with memories, sincere words, and a huge thank you for being in my life.
+          </p>
+        </div>
+
+        <!-- Hero Memory Collage -->
+        <div class="hero-collage animate-on-scroll">
+          <div class="polaroid-card p1">
+            <div class="polaroid-img-box">
+              <img src="memory-1.jpeg" alt="Amirdhaa Memory 1">
+            </div>
+            <span class="polaroid-caption font-handwritten">Bestest Friend 🤍</span>
+          </div>
+
+          <div class="polaroid-card p2">
+            <div class="polaroid-img-box">
+              <img src="memory-2.jpeg" alt="Amirdhaa Memory 2">
+            </div>
+            <span class="polaroid-caption font-handwritten">Special Moments ✨</span>
+          </div>
+
+          <div class="polaroid-card p3">
+            <div class="polaroid-img-box">
+              <img src="memory-3.jpeg" alt="Amirdhaa Memory 3">
+            </div>
+            <span class="polaroid-caption font-handwritten">Us. Just being us 🫶</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <span>Scroll for memories</span>
+        <i class="fa-solid fa-chevron-down bounce"></i>
+      </div>
+    </section>
+
+
+    <!-- 📸 MEMORY GALLERY SECTION -->
+    <section class="gallery-section section-padding" id="gallerySection">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="section-title font-handwritten">Little Pieces of Us 🤍</h2>
+          <p class="section-subtitle">Moments frozen in time that make me smile whenever I look back.</p>
+        </div>
+
+        <div class="memory-grid">
+          
+          <div class="memory-card glass-panel animate-on-scroll" data-index="0">
+            <div class="card-img-wrapper">
+              <img src="memory-1.jpeg" alt="Memory 1" class="gallery-img">
+              <div class="img-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+            <div class="card-caption font-handwritten">
+              "One of the many memories I never want to forget."
+            </div>
+          </div>
+
+          <div class="memory-card glass-panel animate-on-scroll" data-index="1">
+            <div class="card-img-wrapper">
+              <img src="memory-2.jpeg" alt="Memory 2" class="gallery-img">
+              <div class="img-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+            <div class="card-caption font-handwritten">
+              "Some moments don't look special until they become memories."
+            </div>
+          </div>
+
+          <div class="memory-card glass-panel animate-on-scroll" data-index="2">
+            <div class="card-img-wrapper">
+              <img src="memory-3.jpeg" alt="Memory 3" class="gallery-img">
+              <div class="img-overlay">
+                <i class="fa-solid fa-expand"></i>
+              </div>
+            </div>
+            <div class="card-caption font-handwritten">
+              "Us. Just being us. 🤍"
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 🎥 MEMORY VIDEOS SECTION -->
+    <section class="video-section section-padding" id="videoSection">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="section-title font-handwritten">Our Little Memories 🎥🤍</h2>
+          <p class="section-subtitle">A video clip of us living in the moment.</p>
+        </div>
+
+        <div class="video-grid">
+          
+          <div class="video-card glass-panel animate-on-scroll">
+            <div class="video-wrapper">
+              <video controls playsinline preload="metadata" poster="" class="memory-video">
+                <source src="memory-video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <div class="video-caption font-handwritten">
+              <i class="fa-solid fa-heart video-heart-icon"></i> A moment captured forever 🤍
+            </div>
+          </div>
+
+        </div>
+
+        <div class="video-quote text-center animate-on-scroll">
+          <p class="font-handwritten font-large">"Every little memory means more than I can explain. 🤍"</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 💌 SORRY LETTER SECTION -->
+    <section class="letter-section section-padding" id="sorryLetterSection">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="section-title font-handwritten">One Thing I Need To Say... 🥺🤍</h2>
+          <p class="section-subtitle">Straight from my heart to yours.</p>
+        </div>
+
+        <div class="letter-container animate-on-scroll">
+          <div class="paper-letter sorry-letter-card glass-panel">
+            <div class="letter-header">
+              <div class="letter-stamp">💌</div>
+              <div class="letter-to font-handwritten">Dear Amirdhaa,</div>
+            </div>
+
+            <div class="letter-body">
+              <p class="exact-letter-text">
+IM REALLY SORRY FOR NOT UNDERSTANDING YOUR CARE, FRIENDSHIP,YOU 🤍🤍🤍😭😭😭😭
+              </p>
+              
+              <p class="exact-letter-text">
+pls nee enakaga nariya panita i know una purinjikama una Evalo hurt panikura ana indha oru vaati enaku chance kudu na good ah irupen iniku una romba romba romba romba romba miss pana naa una pathiye nenachitu irundhaaa
+              </p>
+              
+              <p class="exact-letter-text">
+I'm really missing you:)
+              </p>
+            </div>
+
+            <div class="letter-footer">
+              <p class="letter-sign-off font-handwritten">Sorry, Amirdhaa. 🤍</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 💖 THANK YOU LETTER SECTION -->
+    <section class="letter-section section-padding" id="thankyouLetterSection">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="section-title font-handwritten">And One More Thing... ✨</h2>
+          <p class="section-subtitle">Because you deserve to know this.</p>
+        </div>
+
+        <div class="letter-container animate-on-scroll">
+          <div class="paper-letter thankyou-letter-card glass-panel">
+            <div class="letter-header">
+              <div class="letter-stamp">✨</div>
+              <div class="letter-to font-handwritten">To My Bestest Girl,</div>
+            </div>
+
+            <div class="letter-body">
+              <p class="exact-letter-text">
+ena analum nee ena vitu poga maten ena vitu thara maten nu enaku nee dailyum prove panitae dhan iruka ana adha purinjikura alavuku enaku dhan maturity illaa 🫠🫠✨✨🫶🫶🫶
+              </p>
+              
+              <p class="exact-letter-text">
+nee unmaiya well mature girl
+              </p>
+              
+              <p class="exact-letter-text">
+sorry for everything
+              </p>
+            </div>
+
+            <div class="letter-footer-note text-center">
+              <p class="font-handwritten font-medium">
+                "Thank you for understanding me even when I didn't understand you. 🤍"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 🫶 FRIENDSHIP MESSAGE SECTION -->
+    <section class="friendship-section section-padding" id="friendshipSection">
+      <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+          <h2 class="section-title font-handwritten">You're My Happiness 🤍</h2>
+        </div>
+
+        <div class="friendship-card glass-panel text-center animate-on-scroll">
+          <div class="sparkle-icon-box">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+
+          <div class="friendship-text-content">
+            <p class="highlight-p">You're my world's second favourite person.</p>
+            <p class="highlight-p">But you are one of the people who make my world happier just by being there.</p>
+            
+            <div class="thank-list font-handwritten">
+              <div class="list-item">Thank you for your care.</div>
+              <div class="list-item">Thank you for your friendship.</div>
+              <div class="list-item">Thank you for understanding me.</div>
+              <div class="list-item">Thank you for staying.</div>
+            </div>
+
+            <p class="final-thank-you font-handwritten font-large">
+              And most importantly...<br>
+              <span class="glow-text">Thank you for being YOU. 🤍</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 🌙 FINAL SECTION -->
+    <section class="final-section section-padding" id="finalSection">
+      <div class="container text-center">
+        <div class="final-content glass-panel animate-on-scroll">
+          <div class="big-heart-icon">🤍</div>
+          <h2 class="final-name font-handwritten">AMIRDHAA.JL 🤍</h2>
+          
+          <p class="final-quote font-handwritten">
+            "Whatever happens, this friendship will always have a special place in my heart."
+          </p>
+
+          <div class="final-summary-box">
+            <p class="summary-line">Thank you.</p>
+            <p class="summary-line">Sorry.</p>
+            <p class="summary-line font-handwritten font-large">And... I miss you. 🫶🤍</p>
+          </div>
+
+          <!-- ❓ SPECIAL QUESTION CARD -->
+          <div class="question-card glass-panel animate-on-scroll">
+            <div class="question-badge">A Special Question 💌</div>
+            <h3 class="question-title font-handwritten">SHALL WE START AGAIN FROM THE LAOR EXAM NIGHT??? 🥺✨</h3>
+            <div class="question-buttons" id="questionButtons">
+              <button id="yesBtn" class="question-btn yes-btn">
+                <span>Yes, let's start again! 🤍</span>
+              </button>
+              <button id="alwaysBtn" class="question-btn always-btn">
+                <span>Always best friends 🫶</span>
+              </button>
+            </div>
+            <div id="answerResponseMessage" class="answer-response hidden font-handwritten">
+              Yay! 🥹🤍 A brand new chapter begins! ✨
+            </div>
+          </div>
+
+          <div class="final-action-buttons">
+            <button id="replayBtn" class="primary-btn glow-btn">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Replay Our Memories ✨</span>
+            </button>
+            <button id="lockBtnBottom" class="secondary-btn">
+              <i class="fa-solid fa-lock"></i>
+              <span>Lock Again 🔐</span>
+            </button>
+          </div>
+
+          <div class="made-with-love">
+            Created with pure love & friendship for AMIRDHAA.JL ✨
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- 🖼️ IMAGE LIGHTBOX MODAL -->
+  <div class="lightbox-modal hidden" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <img src="" id="lightboxImg" alt="Expanded Memory">
+      <div class="lightbox-caption font-handwritten" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
